@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/BrilliantBingoScene.unity
-    guid: 407e8d58af9a7e74095667139619e5bc
+  - enabled: 1
+    path: Assets/Scenes/Splash_Screen.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Second_main_screen.unity
+    guid: 843b451c15f274fbc92b3fd25108ad95
   m_configObjects: {}
