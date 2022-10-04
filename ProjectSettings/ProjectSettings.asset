@@ -155,7 +155,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.CSE6550.PetBingoSubstractionWithLamps
-    Standalone: unity.DefaultCompany.BrilliantBingo
+    Standalone: com.CSE6550.PetBingo-Substraction-With-Lamps
     iPhone: com.DefaultCompany.PetBingo-Substraction-With-Lamps
     tvOS: com.rumyancevpavel.bingo
   buildNumber:
