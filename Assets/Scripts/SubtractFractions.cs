@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Numerics;
 using Fractions;
+using UnityEngine.UIElements;
 
 public class SubtractFractions : MonoBehaviour
 {
@@ -14,7 +15,12 @@ public class SubtractFractions : MonoBehaviour
         , buttonObject20, buttonObject21, buttonObject22, buttonObject23, buttonObject24
         , buttonObject25;
 
-    Text questionTextObject, textObject1, textObject2, textObject3, textObject4, textObject5, textObject6
+    public UnityEngine.UI.Button button1, button2, button3, button4, button5, button6, button7, button8
+        , button9, button10, button11, button12, button13, button14, button15, button16
+        , button17, button18, button19, button20, button21, button22, button23, button24
+        , button25;
+
+    public Text questionTextObject, textObject1, textObject2, textObject3, textObject4, textObject5, textObject6
         , textObject7, textObject8, textObject9, textObject10, textObject11, textObject12
         , textObject13, textObject14, textObject15, textObject16, textObject17, textObject18
         , textObject19, textObject20, textObject21, textObject22, textObject23, textObject24
@@ -27,6 +33,7 @@ public class SubtractFractions : MonoBehaviour
 
     public List<Fraction> FractionAList = new List<Fraction>(); //this list will contain a record of the left fraction even after they have been popped out of their stack
     public List<Fraction> FractionBList = new List<Fraction>(); //this list will contain a record of the right fraction after they have been popped out of their stack
+    public List<Fraction> ResultList = new List<Fraction>(); //this list will contain a record of the subtraction result fraction after they have been popped out of their stack
 
     static int RandomNumerator_A = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the left side
     static int RandomNumerator_B = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the right side
@@ -61,7 +68,10 @@ public class SubtractFractions : MonoBehaviour
             FractionBStack.Push(FractionB);
             FractionBList.Add(FractionB);
             ResultStack.Push(ResultFraction);
+            ResultList.Add(ResultFraction);
         }
+
+       
     }    
 
     // Start is called before the first frame update
@@ -95,8 +105,6 @@ public class SubtractFractions : MonoBehaviour
         textObject24 = buttonObject24.GetComponent<Text>();
         textObject25 = buttonObject25.GetComponent<Text>();
 
-
-
         //Display the answer options
         textObject1.text = ResultStack.Pop().ToString();
         textObject2.text = ResultStack.Pop().ToString();
@@ -128,17 +136,18 @@ public class SubtractFractions : MonoBehaviour
         var c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
         //if (System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString()) < 0)
-        if (c < 0) //questionTextObject.text = "Fraction A - Fraction B = " + c;
+        if (c < 0) //questionTextObject.text = "Fraction A - Fraction B = \n" + c;
         {
             questionTextObject.text = FractionBStack.Pop().ToString() + " - "
                                + FractionAStack.Pop().ToString() + "\n=? "; 
-            
         }
-        else //questionTextObject.text = "Fraction B - Fraction A = " + c;
+        else //questionTextObject.text = "Fraction B - Fraction A = \n" + c;
             questionTextObject.text = FractionAStack.Pop().ToString() + " - "
                               + FractionBStack.Pop().ToString() + "\n= ?";
 
     }
+
+
 
     // Update is called once per frame
     void Update()
