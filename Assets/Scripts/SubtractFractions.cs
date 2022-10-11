@@ -242,7 +242,9 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
-                //Change display image of button to lamb image on top of button
+                //Change display image of button to lamb image on top of button and make button not clickable
+                GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().interactable = false;
+
 
                 //Add 1 to success count
 
@@ -280,7 +282,8 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
-                //Change display image of button to lamb image on top of button
+                //Change display image of button to lamb image on top of button and make button not clickable
+                GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().interactable = false;
 
                 //Add 1 to success count
 
