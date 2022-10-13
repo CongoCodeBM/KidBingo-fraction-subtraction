@@ -27,6 +27,8 @@ public static class Extensions
 
 public class SubtractFractions : MonoBehaviour
 {
+    [SerializeField] List<AudioSource> gameSounds = new List<AudioSource>();
+
     public GameObject questionObject, buttonObject1, buttonObject2, buttonObject3, buttonObject4
         , buttonObject5, buttonObject6, buttonObject7, buttonObject8, buttonObject9
         , buttonObject10, buttonObject11, buttonObject12, buttonObject13, buttonObject14
@@ -230,11 +232,18 @@ public class SubtractFractions : MonoBehaviour
         var c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
         var textOnCurrentButton = GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().GetComponentInChildren<Text>().text;
 
+        string currentButtonName = EventSystem.current.currentSelectedGameObject.name;
+        int currentButtonNumber = int.Parse(string.Concat(currentButtonName.Where(char.IsDigit)));
+
+        Debug.Log("ResultStack.Pop().ToString() : " + ResultStack.Peek().ToString());
+        Debug.Log("textOnCurrentButton.ToString() : " + textOnCurrentButton.ToString());
+        Debug.Log("FractionAStack count : " + FractionAStack.Count);
+        Debug.Log("FractionBStack count : " + FractionBStack.Count);
+        Debug.Log("Clicked button name: " + currentButtonName);
+        Debug.Log("Clicked button number: " + currentButtonNumber);
+
         if (c < 0)
         {
-            Debug.Log("ResultStack.Pop().ToString() : " + ResultStack.Peek().ToString());
-            Debug.Log("textOnCurrentButton.ToString() : " + textOnCurrentButton.ToString());
-
             if (ResultStack.Pop().ToString().Equals(textOnCurrentButton.ToString()))
             {
                 FractionAStack.Pop();
@@ -242,12 +251,17 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
+                //Play sound for correct answer
+                gameSounds[0].Play();
+
                 //Change display image of button to lamb image on top of button and make button not clickable
                 GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().interactable = false;
 
 
                 //Add 1 to success count
 
+
+                //Show next question
                 if (c < 0) questionTextObject.text = FractionBStack.Peek().ToString() + " - "
                             + FractionAStack.Peek().ToString() + "\n= ? ";
                 else questionTextObject.text = FractionAStack.Peek().ToString() + " - "
@@ -261,20 +275,23 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
+                //destroy button, make a sound and prevent corresponding fractions from displaying
+                EventSystem.current.currentSelectedGameObject.SetActive(false); //UI button destroyed
+                gameSounds[1].Play(); //Sound playing for wrong answer
+
                 //show next question
                 if (c < 0) questionTextObject.text = FractionBStack.Peek().ToString() + " - "
                                    + FractionAStack.Peek().ToString() + "\n=? ";
                 else questionTextObject.text = FractionAStack.Peek().ToString() + " - "
                             + FractionBStack.Peek().ToString() + "\n= ? ";
 
-                //destroy button and make a sound
-                EventSystem.current.currentSelectedGameObject.SetActive(false);
             }
                 
         }
 
         else
         {
+
             if (ResultStack.Pop().ToString().Equals(textOnCurrentButton.ToString()))
             {
                 FractionAStack.Pop();
@@ -282,8 +299,11 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
+                //Play sound for correct answer
+                gameSounds[0].Play();
+
                 //Change display image of button to lamb image on top of button and make button not clickable
-                GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().interactable = false;
+                GameObject.Find(EventSystem.current.currentSelectedGameObject.name).GetComponent<Button>().interactable = false; //making button not clickable
 
                 //Add 1 to success count
 
@@ -301,8 +321,9 @@ public class SubtractFractions : MonoBehaviour
                 CheckGreaterFractionStack.Pop();
                 c = System.Convert.ToDecimal(CheckGreaterFractionStack.Peek().ToString());
 
-                //destroy button and make a sound
-                EventSystem.current.currentSelectedGameObject.SetActive(false);
+                //destroy button, make a sound and remove corresponding fractions from Stack
+                EventSystem.current.currentSelectedGameObject.SetActive(false); //UI button destroyed
+                gameSounds[1].Play(); //Sound playing for wrong answer
 
                 //display next question
                 if (c >= 0) questionTextObject.text = FractionAStack.Peek().ToString() + " - "
