@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Numerics;
 using System.Linq;
-using Fractions;
+using Fractions; //This is a package from Nuget.org that we are using it in our code: https://www.nuget.org/packages/Fractions
+
 using UnityEngine.EventSystems;
 
 //This is an extension class that helps us create an extension method that allows us to shuffle a list 
@@ -65,7 +66,11 @@ public class SubtractFractions : MonoBehaviour
     public static Fraction ResultFraction = FractionA.Subtract(FractionB); //this is a fraction created from subtracting RandomNumerator_right from RandomNumerator_left
 
     decimal CheckGreaterFraction = 0; //this will help calculate the difference between fraction A and B, which we will use to determine where fraction A or B should go in order to avoid negative results 
-    
+
+    public int[,] matchedBingoPattern = new int[,] { {1,2,3,4,5}, {6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},
+                                                     {21,22,23,24,25}, {1,7,13,19,25}, {1,6,11,16,21},{2,7,12,17,22},
+                                                     {3,8,13,18,23}, {4,9,14,19,24}, {5,10,15,20,25}, {5,9,13,17,21}
+                                                   };
 
     void AddElementsToTheirStacks()
     {

@@ -36,6 +36,7 @@ TagManager:
   - response24
   - response25
   - fractionQuestion
+  - lambfood
   layers:
   - Default
   - TransparentFX
