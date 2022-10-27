@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LambFeeding : MonoBehaviour
 {
-
     [SerializeField] AudioSource petSound = new AudioSource();
     private Animator animate;
 

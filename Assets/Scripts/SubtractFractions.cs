@@ -59,7 +59,8 @@ public class SubtractFractions : MonoBehaviour
 
     static int RandomNumerator_A = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the left side
     static int RandomNumerator_B = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the right side
-    public static int RandomCommonDenominator = 1; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the denominator for both fractions
+    static int RandomCommonDenominator = 1; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the denominator for both fractions
+    public static int denominatorFractionA = 0;
 
     public static Fraction FractionA = new Fraction(RandomNumerator_A, RandomCommonDenominator);//this is a fraction on the left side, created with the values of RandomNumerator_left and CommonDenominator
     public static Fraction FractionB = new Fraction(RandomNumerator_B, RandomCommonDenominator); //this is a fraction on the left side, created with the values of  RandomNumerator_right and RandomCommonDenominator
@@ -342,7 +343,7 @@ public class SubtractFractions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        denominatorFractionA = (int)(((Fraction)FractionAStack.Peek()).Denominator);
     }
 
 

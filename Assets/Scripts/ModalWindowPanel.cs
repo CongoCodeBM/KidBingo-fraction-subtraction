@@ -26,7 +26,7 @@ public class ModalWindowPanel : MonoBehaviour
     public void Start()
     {
         hintTextObject.text = questionTextBoxObject.text; //setting the text of the question to show in the dialog box
-        switch (SubtractFractions.RandomCommonDenominator)
+        switch (SubtractFractions.denominatorFractionA)
         {
             case 1:
                 imageToDisplayOn.sprite = imageSources[0];
@@ -64,7 +64,8 @@ public class ModalWindowPanel : MonoBehaviour
     public void Update()
     {
         hintTextObject.text = questionTextBoxObject.text; //setting the text of the question to show in the dialog box
-        switch (SubtractFractions.RandomCommonDenominator) //Calling the denominator of the to check what fraction hint image to display
+
+        switch (SubtractFractions.denominatorFractionA) //Calling the denominator of the first fraction to check what fraction hint image to display
         {
             case 1:
                 imageToDisplayOn.sprite = imageSources[0];
@@ -102,8 +103,50 @@ public class ModalWindowPanel : MonoBehaviour
     public void Confirm()
     {
         onConfirmAction?.Invoke();
-        //EventSystem.current.currentSelectedGameObject
-        Debug.Log("SubtractFractions.RandomCommonDenominator is " + SubtractFractions.RandomCommonDenominator);
-        panelObject.SetActive(false);
+
+        Debug.Log("SubtractFractions.denominatorFractionA is " + SubtractFractions.denominatorFractionA);
+        switch (SubtractFractions.denominatorFractionA)
+        {
+            case 1:
+                imageToDisplayOn.sprite = imageSources[0];
+                panelObject.SetActive(false);
+                break;
+            case 2:
+                imageToDisplayOn.sprite = imageSources[1];
+                panelObject.SetActive(false);
+                break;
+            case 3:
+                imageToDisplayOn.sprite = imageSources[2];
+                panelObject.SetActive(false);
+                break;
+            case 4:
+                imageToDisplayOn.sprite = imageSources[3];
+                panelObject.SetActive(false);
+                break;
+            case 5:
+                imageToDisplayOn.sprite = imageSources[4];
+                panelObject.SetActive(false);
+                break;
+            case 6:
+                imageToDisplayOn.sprite = imageSources[5];
+                panelObject.SetActive(false);
+                break;
+            case 7:
+                imageToDisplayOn.sprite = imageSources[6];
+                panelObject.SetActive(false);
+                break;
+            case 8:
+                imageToDisplayOn.sprite = imageSources[7];
+                panelObject.SetActive(false);
+                break;
+            case 9:
+                imageToDisplayOn.sprite = imageSources[8];
+                panelObject.SetActive(false);
+                break;
+            default:
+                imageToDisplayOn.sprite = imageSources[0];
+                panelObject.SetActive(false);
+                break;
+        }
     }
 }
