@@ -59,7 +59,7 @@ public class SubtractFractions : MonoBehaviour
 
     static int RandomNumerator_A = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the left side
     static int RandomNumerator_B = 0; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the numerator of the fraction on the right side
-    static int RandomCommonDenominator = 1; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the denominator for both fractions
+    public static int RandomCommonDenominator = 1; //Random.Range(1, 9); //this will generate a random number between 1 and 9, and it will be the denominator for both fractions
 
     public static Fraction FractionA = new Fraction(RandomNumerator_A, RandomCommonDenominator);//this is a fraction on the left side, created with the values of RandomNumerator_left and CommonDenominator
     public static Fraction FractionB = new Fraction(RandomNumerator_B, RandomCommonDenominator); //this is a fraction on the left side, created with the values of  RandomNumerator_right and RandomCommonDenominator
@@ -67,7 +67,7 @@ public class SubtractFractions : MonoBehaviour
 
     decimal CheckGreaterFraction = 0; //this will help calculate the difference between fraction A and B, which we will use to determine where fraction A or B should go in order to avoid negative results 
 
-    public int[,] matchedBingoPattern = new int[,] { {1,2,3,4,5}, {6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},
+    public int[,]  matchedBingoPattern = new int[,] { {1,2,3,4,5}, {6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},
                                                      {21,22,23,24,25}, {1,7,13,19,25}, {1,6,11,16,21},{2,7,12,17,22},
                                                      {3,8,13,18,23}, {4,9,14,19,24}, {5,10,15,20,25}, {5,9,13,17,21}
                                                    };
