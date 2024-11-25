@@ -1,4 +1,4 @@
-# 🐤[Pet Bingo Percentage Concepts with Chicken🐣](https://github.com/SreeSnigdha1217/PetBingo-Team9)
+# 🐤[Pet Bingo Subtraction Concepts with Chicken🐣]
 
 ![hello-chicken (1)](https://user-images.githubusercontent.com/112828951/200198740-2a709b55-8a41-48ac-8427-f84584c8c057.gif)
 
