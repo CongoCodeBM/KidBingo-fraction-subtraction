@@ -1,8 +1,8 @@
-# 🐤[Pet Bingo Percentage Concepts with Chicken🐣](https://github.com/SreeSnigdha1217/PetBingo-Team9)
+# 🐤[Pet Bingo Subtraction Concepts with Chicken🐣](https://github.com/SreeSnigdha1217/PetBingo-Team9)
 
 ![hello-chicken (1)](https://user-images.githubusercontent.com/112828951/200198740-2a709b55-8a41-48ac-8427-f84584c8c057.gif)
 
-*Pet Bingo* is a playful game for Kindergarten through Fourth Grade, that is aligned with Common Core State Standards for Math. AGES 5-10. Kids will visually learn and practice Percentage concepts! Pet Bingo includes unique educational hints that teachers have developed to help kids understand different math concepts. Play the mixed math mode that adapts to each kid's level to make sure that they're understanding the concepts while still having fun. If you're learning Percentage concepts, you can choose different times tables to practice. Pet Bingo includes a Report Card section where parents and teachers can monitor progress and find additional skill-building activities.
+*Pet Bingo* is a playful game for Kindergarten through Fourth Grade, that is aligned with Common Core State Standards for Math. AGES 5-10. Kids will visually learn and practice subtraction concepts! Pet Bingo includes unique educational hints that teachers have developed to help kids understand different math concepts. Play the mixed math mode that adapts to each kid's level to make sure that they're understanding the concepts while still having fun. If you're learning subtraction concepts, you can choose different times tables to practice. Pet Bingo includes a Report Card section where parents and teachers can monitor progress and find additional skill-building activities.
 
 #### 🖼️Game Screenshots
 
